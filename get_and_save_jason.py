@@ -35,11 +35,13 @@ def run_once_min():
             get_station_data_save_to_json_file()
             wait_time = (59.75)
             time.sleep(wait_time)
+
         except:
-            current_time = time.time()
+            current_time = time.gmtime()
             time_of_day = (time.strftime("%Y%m%d%H%M", current_time))
             print("error at %i", time_of_day)
-
+            wait_time = (59)
+            time.sleep(wait_time)
 
 if __name__ == '__main__':
     run_once_min()
